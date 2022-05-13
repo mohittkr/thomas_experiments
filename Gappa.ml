@@ -1,4 +1,4 @@
-let m = 32
+let m = 128
 let si = string_of_int
 let  p = si 64
 
@@ -23,7 +23,7 @@ let () =
     print "\n  alpha_1 rnd= a_1;\n";
     for i = 2 to (m-1) do
         print ("  beta_" ^ (si i) ^ " rnd= b_" ^  (si i) ^ " / alpha_" ^ (si (i-1)) ^ ";\n");
-        print ("  alpha_" ^ (si i) ^ " rnd= a_" ^  (si i) ^ " - b_" ^ (si i) ^ " * c_" ^ (si (i-1)) ^ ";\n");
+        print ("  alpha_" ^ (si i) ^ " rnd= a_" ^  (si i) ^ " - beta_" ^ (si i) ^ " * c_" ^ (si (i-1)) ^ ";\n");
     done;
 
     print "\n  f rnd= -50 * t_2 * t_2;\n";
@@ -45,5 +45,5 @@ let () =
     done;
     print (" u_" ^ (si (m-1)) ^ " / " ^ (si m) ^ ";\n");
 
-    print "{t_1  in [0.1, 0.1] -> t_2 in [0.5, 0.5] -> p in ?}";
+    print "{t_1  in [0.1, 0.1] -> t_2 in [-1, 1] -> p in ?}";
     
